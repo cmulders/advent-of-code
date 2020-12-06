@@ -10,7 +10,12 @@ from common import Puzzle, PuzzleType
 
 
 def find_puzzle_module(year, day):
-    return importlib.import_module(f"{year}.day_{day}")
+    try:
+        return importlib.import_module(f"{year}.day_{day}")
+    except ImportError:
+        raise ImportError(f"Puzzle code for {year}-{day} was not found.")
+    except SyntaxError:
+        raise SyntaxError(f"Puzzle code for {year}-{day} is invalid.")
 
 
 def import_puzzles(module) -> List[Type[Puzzle]]:
