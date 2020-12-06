@@ -1,0 +1,5 @@
+.aoc_token
+/input/
+input.txt
+__pycache__
+.vscode
