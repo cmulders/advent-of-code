@@ -35,12 +35,12 @@ class TestPuzzle(unittest.TestCase):
 
     def test_example_a(self):
         expected = ""
-        result = PuzzleA().handle(self.INPUT)
+        result = PuzzleA(self.INPUT).exec()
 
         self.assertEqual(result, expected)
 
     def test_example_b(self):
         expected = ""
-        result = PuzzleB().handle(self.INPUT)
+        result = PuzzleB(self.INPUT).exec()
 
         self.assertEqual(result, expected)
