@@ -1,6 +1,4 @@
-import functools
-import itertools
-import operator
+import math
 import unittest
 from typing import List, Sequence
 
@@ -80,7 +78,7 @@ class PuzzleB(CommonDay):
         ]
         counts = [self.count_slope(input, dx, dy) for dx, dy in slopes]
 
-        return functools.reduce(operator.mul, counts)
+        return math.prod(counts)
 
 
 class TestPuzzle(unittest.TestCase):
